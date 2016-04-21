@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <style name="AppTheme.Base" parent="Theme.AppCompat.NoActionBar">
+                <!--状态栏颜色-->
+                <item name="colorPrimaryDark">@color/colorTopViewBg</item>
+                <!--Toolbar颜色-->
+                <item name="colorPrimary">@color/colorTopViewBg</item>
+                <item name="android:titleTextAppearance">@style/MenuTextStyle</item>
+
+        </style>
+</resources>
