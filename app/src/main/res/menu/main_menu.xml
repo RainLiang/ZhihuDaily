@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <item
+        android:id="@+id/action_add"
+        android:title="@string/menu_add"
+        android:icon="@mipmap/theme_add"
+        app:showAsAction="ifRoom"
+        />
     <item
         android:id="@+id/action_message"
-        android:title="@string/app_name"
+        android:title="@string/menu_message"
+        android:icon="@mipmap/message"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/action_night"
+        android:title="@string/menu_night"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/action_setting"
+        android:title="@string/menu_setting"
+        app:showAsAction="never"
         />
 </menu>

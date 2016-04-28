@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 
 import com.rongma.zhihudaily.R;
 import com.rongma.zhihudaily.fragment.MainPageFragment;
@@ -40,6 +41,19 @@ public class MainActivity extends BaseFragmentActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.main_frag, mainFrag);
         transaction.commit();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //加载Menu
+        getMenuInflater().inflate(R.menu.main_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        menu.getItem(0).setVisible(false);
+        return true;
     }
 
     @Override

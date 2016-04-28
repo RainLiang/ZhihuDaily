@@ -2,6 +2,6 @@
     <string name="app_name">知乎日报</string>
     <string name="menu_message">信息</string>
     <string name="menu_add">关注</string>
-    <string name="menu_night">页面模式</string>
+    <string name="menu_night">夜间模式</string>
     <string name="menu_setting">设置选项</string>
 </resources>
