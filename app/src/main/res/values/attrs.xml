@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="CircleImageView">
-        <attr name="civ_border_width" format="dimension"/>
-        <attr name="civ_border_color" format="color"/>
-        <attr name="civ_border_overlay" format="boolean"/>
-        <attr name="civ_fill_color" format="color"/>
+    <declare-styleable name="MenuSelectItemView">
+        <attr name="imageSrc" format="reference"/>
+        <attr name="type">
+            <enum name="blue_title" value="0"/>
+            <enum name="mainPage_title" value="1"/>
+            <enum name="select_item_title" value="2"/>
+        </attr>
+        <attr name="menuText" format="string"/>
     </declare-styleable>
 </resources>

@@ -24,15 +24,6 @@
         android:layout_gravity="left"
         android:background="@android:color/white"
         >
-        <com.rongma.zhihudaily.view.CircleImageView
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher"
-            android:layout_centerInParent="true"
-            app:civ_border_width="5dp"
-            app:civ_border_color="@android:color/background_light"
-            app:civ_border_overlay="true"
-            />
+        <include layout="@layout/main_left_menu_layout" />
     </RelativeLayout>
 </android.support.v4.widget.DrawerLayout>

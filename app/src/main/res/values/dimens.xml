@@ -4,4 +4,5 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="toolbar_height">55dp</dimen>
     <dimen name="toolbar_textSize">18sp</dimen>
+    <dimen name="menu_textSize">16sp</dimen>
 </resources>
