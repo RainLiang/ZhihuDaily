@@ -5,4 +5,6 @@
     <string name="menu_night">夜间模式</string>
     <string name="menu_setting">设置选项</string>
     <string name="menu_text_myFavorite">我的收藏</string>
+    <string name="text_download">离线下载</string>
+    <string name="text_homepage">首页</string>
 </resources>

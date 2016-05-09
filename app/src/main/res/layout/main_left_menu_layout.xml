@@ -4,30 +4,54 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorViewBg"
+    android:background="@color/colorTopViewBg"
     >
-    <RelativeLayout
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:src="@mipmap/comment_avatar"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/civ_avatar"
+        />
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorTopViewBg"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         >
-        <ImageView
-            android:layout_marginTop="10dp"
-            android:layout_width="37dp"
-            android:layout_height="37dp"
-            android:src="@mipmap/comment_avatar"
-            android:layout_marginLeft="15dp"
-            android:id="@+id/civ_avatar"
+        <com.rongma.zhihudaily.view.MenuSelectItemView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:menuText="@string/menu_text_myFavorite"
+            app:imageSrc="@mipmap/favorites"
+            app:background_color="@color/colorTopViewBg"
+            app:menuTextColor="@color/colorWhiteText"
+            app:menuTextSize="14"
+            android:id="@+id/msiv_favorite"
             />
         <com.rongma.zhihudaily.view.MenuSelectItemView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:menuText="我的收藏"
-            app:imageSrc="@mipmap/favorites"
-            app:type="blue_title"
-            android:layout_below="@id/civ_avatar"
-            android:layout_marginTop="40dp"
+            android:layout_weight="1"
+            app:menuText="@string/text_download"
+            app:imageSrc="@mipmap/download"
+            app:background_color="@color/colorTopViewBg"
+            app:menuTextColor="@color/colorWhiteText"
+            app:menuTextSize="14"
+            android:id="@+id/msiv_download"
             />
-    </RelativeLayout>
-
+    </LinearLayout>
+    <com.rongma.zhihudaily.view.MenuSelectItemView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:menuText="@string/text_homepage"
+        app:background_color="@color/colorViewBg"
+        app:menuTextColor="@color/colorTopViewBg"
+        app:imageSrc="@mipmap/home"
+        app:menuTextSize="16"
+        android:id="@+id/msiv_homepage"
+        android:gravity="center_vertical"
+        />
 </LinearLayout>

@@ -10,7 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.rongma.zhihudaily.R;
-import com.rongma.zhihudaily.global.MenuSelectItemType;
 
 /**
  * Created by RongMa on 16/5/8.
@@ -19,6 +18,7 @@ public class MenuSelectItemView extends LinearLayout
 {
     private ImageView imageView;
     private TextView textView;
+    private OnItemViewClickListener listener;
     public MenuSelectItemView(Context context,AttributeSet attrs)
     {
         super(context,attrs);
@@ -34,10 +34,24 @@ public class MenuSelectItemView extends LinearLayout
     private void bindAttrs(Context context,AttributeSet attrs)
     {
         View view = View.inflate(context,R.layout.menu_title_view_layout,this);
-        LayoutParams params = new LayoutParams(context,attrs);
 
         imageView = (ImageView) view.findViewById(R.id.iv_menu_item_icon);
         textView = (TextView) view.findViewById(R.id.tv_menu_item_title);
+
+        imageView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onClick();
+            }
+        });
+
+        textView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onClick();
+            }
+        });
+
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.MenuSelectItemView);
         int length = typedArray.getIndexCount();
         for(int i = 0 ; i < length ; i++)
@@ -52,35 +66,31 @@ public class MenuSelectItemView extends LinearLayout
                 case R.styleable.MenuSelectItemView_menuText:
                     textView.setText(typedArray.getString(R.styleable.MenuSelectItemView_menuText));
                     break;
-                case R.styleable.MenuSelectItemView_type:
-                    //根据控件的数据类型,进行相应的配置
-                    int type = R.styleable.MenuSelectItemView_type;
-                    setViewByType(type);
+                case R.styleable.MenuSelectItemView_background_color:
+                    setBackgroundColor(typedArray.getColor(R.styleable.MenuSelectItemView_background_color,0));
+                    break;
+                case R.styleable.MenuSelectItemView_menuTextColor:
+                    textView.setTextColor(typedArray.getColor(R.styleable.MenuSelectItemView_menuTextColor,0));
+                    break;
+                case R.styleable.MenuSelectItemView_menuTextSize:
+                    textView.setTextSize(typedArray.getFloat(R.styleable.MenuSelectItemView_menuTextSize,14));
                     break;
             }
         }
         typedArray.recycle();
     }
 
-    //根据View的类型,配置相应的View
-    private void setViewByType(int type) {
-        switch (type)
-        {
-            case MenuSelectItemType.BLUE_TITLE:
-                setBackgroundColor(getResources().getColor(R.color.colorTopViewBg));
-                LayoutParams imageParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT);
-                imageParams.setMargins(0,0,15,0);
-                imageView.setLayoutParams(imageParams);
-                break;
-            case MenuSelectItemType.MAINPAGE_TITLE:
-                setBackgroundResource(R.color.colorGrayText);
-                LayoutParams imageParamsMainPage = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT);
-                imageParamsMainPage.setMargins(0,0,20,0);
-                imageView.setLayoutParams(imageParamsMainPage);
-                break;
-        }
 
+
+    public void setOnClickListener(OnItemViewClickListener listener)
+    {
+        this.listener = listener;
     }
+
+    //点击事件的回调入口
+    interface OnItemViewClickListener
+    {
+        void onClick();
+    }
+
 }
